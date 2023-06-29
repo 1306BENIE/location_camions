@@ -3,6 +3,9 @@ from .models import Camion, Client, Location
 from django.core.mail import send_mail
 from django.conf import settings
 
+def home(request):
+    return render(request, "home.html")
+
 def camion_list(request):
     camions = Camion.objects.all()
     return render(request, 'location/camion_list.html', context={'camions': camions})
